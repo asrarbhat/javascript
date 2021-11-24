@@ -41,6 +41,3 @@
 function rayon() {
     value = 10;
 }
-
-rayon()
-console.log(window.value)
