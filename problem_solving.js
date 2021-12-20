@@ -1,5 +1,5 @@
 //1d ararys
-const p = console.log;
+// const p = console.log;
 // let arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0];
 // p(arr);
 // p(arr.length)
@@ -153,15 +153,15 @@ const p = console.log;
 
 
 //tree
-tree = {
-    0: [0, [1, 2]],
-    1: [1, [3, 4]],
-    2: [2, [5, 6]],
-    3: [3, []],
-    4: [4, []],
-    5: [5, []],
-    6: [6, []]
-}
+// let tree = {
+//     0: [0, [1, 2]],
+//     1: [1, [3, 4]],
+//     2: [2, [5, 6]],
+//     3: [3, []],
+//     4: [4, []],
+//     5: [5, []],
+//     6: [6, []]
+// }
 // function inorder(root, tree) {
 //     let children = tree[root][1]
 //     if (children.length != 0 && children[0] != -1) {
@@ -175,14 +175,77 @@ tree = {
 
 // inorder(0, tree)
 
-function preorder(root, tree) {
-    let children = tree[root][1]
-    p(tree[root][0])
-    if (children.length != 0 && children[0] != -1) {
-        preorder(children[0], tree)
-    }
-    if (children.length != 0 && children[1] != -1) {
-        preorder(children[1], tree)
-    }
-}
-preorder(0, tree)
+// function preorder(root, tree) {
+//     let children = tree[root][1]
+//     p(tree[root][0])
+//     if (children.length != 0 && children[0] != -1) {
+//         preorder(children[0], tree)
+//     }
+//     if (children.length != 0 && children[1] != -1) {
+//         preorder(children[1], tree)
+//     }
+// }
+// preorder(0, tree)
+
+//graphs
+// let graph = {
+//     1: [1, [2, 3]],
+//     2: [2, [3, 5]],
+//     3: [3, [1, 4]],
+//     4: [4, [2, 5]],
+//     5: [5, [2, 3]],
+// }
+// function breathFirst(start, graph) {
+//     extendedList = []
+//     queue = [start]
+//     while (queue.length > 0) {
+//         if (!(extendedList.includes(queue[0]))) {
+//             p(graph[queue[0]][0])
+//             queue.push(...graph[queue[0]][1])
+//             extendedList.push(queue[0])
+//         }
+//         queue.shift()
+//     }
+// }
+// breathFirst(2, graph)
+
+// function depthFirst(start, graph) {
+//     extendedList = []
+//     queue = [start]
+//     while (queue.length > 0) {
+//         if (!(extendedList.includes(queue[0]))) {
+//             p(graph[queue[0]][0])
+//             extendedList.push(queue[0])
+//             temp = graph[queue[0]][1]
+//             queue.shift()
+//             queue.unshift(...temp)
+//         }
+//         else
+//             queue.shift()
+//     }
+// }
+// depthFirst(3, graph)
+
+
+//dynammic programming
+
+// function finder(i, j, p, q, power, weight, arr) {
+//     if (i > p || j > q) {
+//         return -1;
+//     }
+
+//     if (arr[i][j] !== arr[p][q]) {
+//         power -= weight;
+//     }
+
+//     if (i == p && j == q) {
+//         return power;
+//     }
+//     return Math.max(
+//         finder(i + 1, j, p - 1, q, power, weight, arr),
+//         finder(i + 1, j, p, q - 1, power, weight, arr),
+//         finder(i, j + 1, p - 1, q, power, weight, arr),
+//         finder(i, j + 1, p, q - 1, power, weight, arr)
+//     );
+// }
+// p(finder(0, 0, 2, 2, 1, 1, [[1, 2, 3], [4, 5, 6], [7, 2, 1]]))
